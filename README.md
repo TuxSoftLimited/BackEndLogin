@@ -18,12 +18,12 @@ In an aim to be as simple and efficient as possible, this plugin consists of onl
 2. Save DataBaseDetails.inc above the web root in your server.
 3. Create a MySQL database and table.  The table needs to contain the following SQL structure: 
 ```SQL
-> CREATE TABLE ExampleLoginTable(ID BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,User VARCHAR(25) NOT NULL,Pass VARCHAR(100) NOT NULL,DateAdded DATE NOT NULL);
-```.
+CREATE TABLE ExampleLoginTable(ID BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,User VARCHAR(25) NOT NULL,Pass VARCHAR(100) NOT NULL,DateAdded DATE NOT NULL);
+```
 4. Insert your desired login details using the following SQL structure: 
 ```SQL
-> INSERT INTO ExampleLoginTable (User, Pass, DateAdded) VALUES ('USERNAME', 'HASHED-AND-SALTED-PASSWORD', CURDATE() );
-```.
+INSERT INTO ExampleLoginTable (User, Pass, DateAdded) VALUES ('USERNAME', 'HASHED-AND-SALTED-PASSWORD', CURDATE() );
+```
 5. Add your MD5 salt to the space on line 45 of BackEndLogin.php.
 6. Add your Back End to the AccessBackEnd function on line 78 of BackEndLogin.php.
 7. Save BackEndLogin.php to your web root folder.
